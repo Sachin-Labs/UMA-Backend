@@ -1,0 +1,65 @@
+const ROLES = {
+    ADMIN: 'ADMIN',
+    HR: 'HR',
+    EMPLOYEE: 'EMPLOYEE',
+};
+
+const SUBSCRIPTION_PLANS = {
+    FREE: 'FREE',
+    PRO: 'PRO',
+    ENTERPRISE: 'ENTERPRISE',
+};
+
+const PLAN_LIMITS = {
+    FREE: 10,
+    PRO: 100,
+    ENTERPRISE: Infinity,
+};
+
+const WORK_MODES = {
+    ONSITE: 'ONSITE',
+    WFH: 'WFH',
+    HYBRID: 'HYBRID',
+};
+
+const WORK_TYPES = {
+    OFFICE: 'OFFICE',
+    WFH: 'WFH',
+};
+
+const ATTENDANCE_STATUS = {
+    PRESENT: 'PRESENT',
+    ABSENT: 'ABSENT',
+    LATE: 'LATE',
+    HALF_DAY: 'HALF_DAY',
+};
+
+const EMPLOYMENT_STATUS = {
+    ACTIVE: 'ACTIVE',
+    RESIGNED: 'RESIGNED',
+    TERMINATED: 'TERMINATED',
+};
+
+const LEAVE_TYPES = {
+    CASUAL: 'CASUAL',
+    SICK: 'SICK',
+    PAID: 'PAID',
+};
+
+const LEAVE_STATUS = {
+    PENDING: 'PENDING',
+    APPROVED: 'APPROVED',
+    REJECTED: 'REJECTED',
+};
+
+module.exports = {
+    ROLES,
+    SUBSCRIPTION_PLANS,
+    PLAN_LIMITS,
+    WORK_MODES,
+    WORK_TYPES,
+    ATTENDANCE_STATUS,
+    EMPLOYMENT_STATUS,
+    LEAVE_TYPES,
+    LEAVE_STATUS,
+};

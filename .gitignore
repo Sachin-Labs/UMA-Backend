@@ -1,0 +1,21 @@
+# Node
+node_modules/
+npm-debug.log*
+
+# Environment
+.env
+.env.test
+.env.local
+
+# Logs
+logs/
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# MacOS
+.DS_Store
