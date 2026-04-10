@@ -7,7 +7,7 @@ const startServer = async () => {
     await connectDB();
 
     app.listen(env.PORT, () => {
-        logger.info(`AMS Server running on port ${env.PORT} in ${env.NODE_ENV} mode`);
+        logger.info(`UMA Server running on port ${env.PORT} in ${env.NODE_ENV} mode`);
     });
 };
 
