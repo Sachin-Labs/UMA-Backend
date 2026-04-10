@@ -16,7 +16,7 @@ const env = {
   SMTP_PORT: parseInt(process.env.SMTP_PORT, 10) || 587,
   SMTP_USER: process.env.SMTP_USER || '',
   SMTP_PASS: process.env.SMTP_PASS || '',
-  EMAIL_FROM: process.env.EMAIL_FROM || 'noreply@ams.com',
+  EMAIL_FROM: process.env.EMAIL_FROM || 'noreply@uma.com',
 
   CLIENT_URL: process.env.CLIENT_URL || 'http://localhost:5173',
 

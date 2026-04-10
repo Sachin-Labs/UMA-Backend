@@ -260,10 +260,10 @@ class EmailService {
         const safeName = this._sanitize(organisationName);
         return this.send({
             to,
-            subject: `You've been invited to join ${safeName} on AMS`,
+            subject: `You've been invited to join ${safeName} on UMA`,
             html: `
                 <h2>Welcome to ${safeName}!</h2>
-                <p>You've been invited to join the Attendance Management System.</p>
+                <p>You've been invited to join the User Management & Attendance System.</p>
                 <p><a href="${inviteLink}">Click here to set up your account</a></p>
             `,
             text: `You've been invited to join ${organisationName}. Visit: ${inviteLink}`,
@@ -273,7 +273,7 @@ class EmailService {
     async sendPasswordReset({ to, resetLink }) {
         return this.send({
             to,
-            subject: 'Password Reset Request - AMS',
+            subject: 'Password Reset Request - UMA',
             html: `
                 <h2>Password Reset</h2>
                 <p>You requested a password reset. Click the link below:</p>
@@ -317,7 +317,7 @@ class EmailService {
     async sendOtp({ to, otp }) {
         return this.send({
             to,
-            subject: 'Your AMS Verification Code',
+            subject: 'Your UMA Verification Code',
             html: `
                 <h2>Email Verification</h2>
                 <p>Your verification code is:</p>
@@ -325,7 +325,7 @@ class EmailService {
                 <p>This code expires in <strong>10 minutes</strong>.</p>
                 <p>If you didn't request this, please ignore this email.</p>
             `,
-            text: `Your AMS verification code is: ${otp}. It expires in 10 minutes.`,
+            text: `Your UMA verification code is: ${otp}. It expires in 10 minutes.`,
         });
     }
 }

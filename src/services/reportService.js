@@ -22,7 +22,7 @@ class ReportService {
             .lean();
 
         const workbook = new ExcelJS.Workbook();
-        workbook.creator = 'AMS';
+        workbook.creator = 'UMA';
         workbook.created = new Date();
 
         const sheet = workbook.addWorksheet('Attendance Report');
