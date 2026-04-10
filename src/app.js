@@ -19,6 +19,9 @@ const auditRoutes = require('./routes/auditRoutes');
 
 const app = express();
 
+// Trust proxy (required for express-rate-limit on Render/Heroku)
+app.set('trust proxy', 1);
+
 // Security middleware
 app.use(helmet());
 app.use(cors({
@@ -40,7 +43,7 @@ app.use('/api', apiLimiter);
 
 // Health check
 app.get('/api/health', (req, res) => {
-    res.json({ success: true, message: 'AMS API is running', timestamp: new Date().toISOString() });
+    res.json({ success: true, message: 'UMA API is running', timestamp: new Date().toISOString() });
 });
 
 // Routes
