@@ -27,19 +27,19 @@ class AuthService {
         const hashedPassword = await bcrypt.hash(password, 10);
 
         // Upsert OTP record (replaces any existing OTP for this email)
-        await Otp.findOneAndUpdate(
-            { email },
-            {
-                email,
-                otp,
-                name,
-                password: hashedPassword,
-                organisationName,
-                attempts: 0,
-                expiresAt: new Date(Date.now() + 10 * 60 * 1000),
-            },
-            { upsert: true, new: true, setDefaultsOnInsert: true }
-        );
+        let otpRecord = await Otp.findOne({ email });
+        if (!otpRecord) {
+            otpRecord = new Otp({ email });
+        }
+
+        otpRecord.otp = otp;
+        otpRecord.name = name;
+        otpRecord.password = hashedPassword;
+        otpRecord.organisationName = organisationName;
+        otpRecord.attempts = 0;
+        otpRecord.expiresAt = new Date(Date.now() + 10 * 60 * 1000);
+
+        await otpRecord.save();
 
         // Send OTP via emailService (respects EMAIL_PROVIDER: console/ethereal/smtp)
         await emailService.sendOtp({ to: email, otp });
